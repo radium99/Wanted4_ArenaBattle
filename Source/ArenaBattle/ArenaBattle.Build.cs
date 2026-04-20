@@ -2,19 +2,18 @@
 
 using UnrealBuildTool;
 
-public class AreaBattle : ModuleRules
+public class ArenaBattle : ModuleRules
 {
-	public AreaBattle(ReadOnlyTargetRules Target) : base(Target)
+	public ArenaBattle(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
-		
 
 		// Include에서 검색할 경로 지정.
 		// 상대 경로로 Include 처리도 가능하지만, 지정해두면 편함.
 		PublicIncludePaths.AddRange(new string[] 
 		{
-			"AreaBattle"
-		});
+            "ArenaBattle"
+        });
 
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput" });
 

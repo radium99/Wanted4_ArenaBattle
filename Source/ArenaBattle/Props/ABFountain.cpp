@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "Props/ABFountain.h"
@@ -10,19 +10,19 @@ AABFountain::AABFountain()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	// ì»´í¬ë„ŒíŠ¸ ê°ì²´ ìƒì„±.
 	Body = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Body"));
 	Water = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Water"));
 
-	// ·çÆ® ÄÄÆ÷³ÍÆ® (ÇÊ¼ö)
+	// ë£¨íŠ¸ ì»´í¬ë„ŒíŠ¸ ì§€ì •.
 	RootComponent = Body;
 
-	// Water´Â ·çÆ®ÀÇ ÇÏÀ§ ÄÄÆ÷³ÍÆ®·Î ÁöÁ¤.
+	// Water ì»´í¬ë„ŒíŠ¸ëŠ” ë£¨íŠ¸ì˜ í•˜ìœ„ ì»´í¬ë„ŒíŠ¸ë¡œ ì§€ì •.
 	Water->SetupAttachment(Body);
-
-	// ÇÏÀ§ ÄÄÆ÷³ÍÆ® ¼³Á¤ÇÑ ÈÄ¿¡´Â »ó´ë À§Ä¡ ¼³Á¤ÇØÁÖ±â.
+	// í•˜ìœ„ ì»´í¬ë„ŒíŠ¸ ì„¤ì •í•œ í›„ì—ëŠ” ìƒëŒ€ ìœ„ì¹˜ ì„¤ì •í•´ì£¼ëŠ” ê²Œ ì¢‹ìŒ.
 	Water->SetRelativeLocation(FVector(0.0f, 0.0f, 132.0f));
 
-	// ºĞ¼ö´ë ¾Ö¼Â
+	// ë¶„ìˆ˜ëŒ€ ì• ì…‹ ê²€ìƒ‰ í›„ ì„¤ì •.
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> FountainBodyMesh(
 		TEXT("/Game/ArenaBattle/Environment/Props/SM_Plains_Castle_Fountain_01.SM_Plains_Castle_Fountain_01")
 	);
@@ -32,7 +32,7 @@ AABFountain::AABFountain()
 		Body->SetStaticMesh(FountainBodyMesh.Object);
 	}
 
-	// ¹° ¾Ö¼Â
+	// ë¬¼ ì• ì…‹ ê²€ìƒ‰ í›„ ì„¤ì •.
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> FountainWaterMesh(
 		TEXT("/Game/ArenaBattle/Environment/Props/SM_Plains_Fountain_02.SM_Plains_Fountain_02")
 	);
@@ -41,7 +41,6 @@ AABFountain::AABFountain()
 	{
 		Water->SetStaticMesh(FountainWaterMesh.Object);
 	}
-
 }
 
 // Called when the game starts or when spawned

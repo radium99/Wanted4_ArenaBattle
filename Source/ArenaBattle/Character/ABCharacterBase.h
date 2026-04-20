@@ -7,7 +7,7 @@
 #include "ABCharacterBase.generated.h"
 
 UCLASS()
-class AREABATTLE_API AABCharacterBase : public ACharacter
+class ARENABATTLE_API AABCharacterBase : public ACharacter
 {
 	GENERATED_BODY()
 

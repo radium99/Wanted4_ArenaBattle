@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -6,8 +6,11 @@
 #include "GameFramework/Actor.h"
 #include "ABFountain.generated.h"
 
+// 전방 선언.
+class UStaticMeshComponent;
+
 UCLASS()
-class AREABATTLE_API AABFountain : public AActor
+class ARENABATTLE_API AABFountain : public AActor
 {
 	GENERATED_BODY()
 	
@@ -23,11 +26,11 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(VisibleAnywhere, Category = Mesh)
-	TObjectPtr<UStaticMeshComponent>Body;
+public:
+	// 컴포넌트 구성.
+	UPROPERTY(VisibleAnywhere, Category = "Mesh")
+	TObjectPtr<UStaticMeshComponent> Body;
 
 	UPROPERTY(VisibleAnywhere, Category = Mesh)
-	TObjectPtr<UStaticMeshComponent>Water;
-
-
+	TObjectPtr<UStaticMeshComponent> Water;
 };
